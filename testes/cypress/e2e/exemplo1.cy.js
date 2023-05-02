@@ -17,7 +17,7 @@ describe('Criando cenário de teste para o site clobalsqa',() => {
     cy.get('#username').type(info[0])
     cy.get('#password').type(info[1])
     cy.get('.btn-primary').click()
-    cy.get('h1.ng-binding').should('contain.text',info[0])
+    cy.get('h1.ng-binding').should('contain.text',info[2])
 
   })
 
@@ -25,18 +25,16 @@ describe('Criando cenário de teste para o site clobalsqa',() => {
 
 function criarUsuario(falha){
 
-  let horas = new Date().getHours().toString();
-  let minutos = new Date().getMinutes().toString();
-  let segundos = new Date().getSeconds().toString();
-
+  let firstName = generateFirstName()
+  let lastName = generateLasttName()
   let user = generateRandomUsername()
   let senha = generateRandomPassword(10)
-  let userInfo = [user,senha]
+  let userInfo = [user,senha,firstName]
 
   cy.visit('https://globalsqa.com/angularJs-protractor/registration-login-example/#/login')
   cy.get('.btn-link').click()
-  cy.get('#firstName').type(user)
-  cy.get('#Text1').type(user)
+  cy.get('#firstName').type(firstName)
+  cy.get('#Text1').type(lastName)
   cy.get('#username').type(user)
   cy.get('#password').type(senha)
   if(falha){
@@ -61,7 +59,6 @@ function generateRandomPassword(length) {
   return password;
 }
 
-
 function generateRandomUsername() {
   const adjectives = ["happy", "lucky", "clever", "brave", "funny", "kind", "silly", "friendly", "honest", "wise"];
   const nouns = ["dog", "cat", "bird", "fish", "bear", "tiger", "lion", "fox", "owl", "horse"];
@@ -75,4 +72,18 @@ function generateRandomUsername() {
   const username = adjective + noun + Math.floor(Math.random() * 100);
   
   return username;
+}
+
+
+function generateFirstName() {
+  const nomes = ['Ana', 'André', 'Beatriz', 'Bruno', 'Carlos', 'Carolina', 'Catarina', 'Daniel', 'Diogo', 'Duarte', 'Eduardo', 'Fábio', 'Fernanda', 'Filipe', 'Gabriela'];
+  const randomNameIndex = Math.floor(Math.random() * nomes.length);
+  const firstName = nomes[randomNameIndex];
+  return firstName;
+}
+function generateLasttName() {
+  const sobrenomes = ['Silva', 'Santos', 'Oliveira', 'Souza', 'Pereira', 'Costa', 'Ferreira', 'Rodrigues', 'Almeida', 'Gomes', 'Carvalho', 'Martins', 'Rocha', 'Sousa', 'Mendes'];
+  const randomLastNameIndex = Math.floor(Math.random() * sobrenomes.length);
+  const lastName = sobrenomes[randomLastNameIndex];
+  return lastName;
 }
