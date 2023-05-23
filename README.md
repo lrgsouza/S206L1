@@ -8,3 +8,9 @@ Repositório para entrega das tarefas da matéria de S206 - Qualidade de softwar
  ```
  npm run cypress:open
  ```
+
+
+ ## Para rodar os testes do karate
+ ```
+ mvn test -Dtest=PokeRunner
+ ```
