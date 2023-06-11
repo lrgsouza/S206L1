@@ -10,7 +10,8 @@ Repositório para entrega das tarefas da matéria de S206 - Qualidade de softwar
  ```
 
 
- ## Para rodar os testes do karate
+ ## Para rodar os testes do karate referente à lista de exercicios
  ```
- mvn test -Dtest=PokeRunner
+ cd .\aula_karate\
+ mvn test -Dtest=PublicapisRunner
  ```
