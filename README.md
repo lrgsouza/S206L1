@@ -1,17 +1,20 @@
 # S206L1
-Repositório para entrega das tarefas da matéria de S206 - Qualidade de software
+Branch dedicada à entrega da prova pratica de qualidade de software
 
-- Branch staging para desenvolvimento das atividades.
-- Branch main para entrega das atividades
-
- ## Para iniciar o cypres rodar
+ ## Para o projeto CYPRESS
  ```
- npm run cypress:open
- ```
+ cd .\cypress\testes
+npm install cypress --save-dev
+npm run start:cypress
+```
 
+## Para rodar e gerar os relatórios
+```
+./node_modules/.bin/cypress run --spec 'cypress/e2e/**/'
+```
 
- ## Para rodar os testes do karate referente à lista de exercicios
+ ## Para o projeto KARATE
  ```
- cd .\aula_karate\
- mvn test -Dtest=PublicapisRunner
+ cd .\karate\
+ mvn test -Dtest=ProvaRunner
  ```
