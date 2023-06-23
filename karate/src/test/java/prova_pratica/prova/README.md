@@ -2,13 +2,13 @@
 
 ## Descrição
 
-Esta entrega se refere a lista de exercicios para validar conhecimentos com karate.
+Esta entrega se refere a prova Prática de Karate
 
 ## Como executar
 
 ```shell
-cd ./aula_karate
-mvn test -Dtest=PublicapisRunner
+cd ./karate
+mvn test -Dtest=ProvaRunner
 ```
 
 ## Tecnologias utilizadas
