@@ -15,3 +15,10 @@ Repositório para entrega das tarefas da matéria de S206 - Qualidade de softwar
  cd .\aula_karate\
  mvn test -Dtest=PublicapisRunner
  ```
+
+
+# PROVA PRATICA
+A prova pratica está na branch 'prova-pratica'
+```bash
+git checkout prova-pratica
+```

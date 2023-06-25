@@ -28,3 +28,4 @@ hs_err_pid*
 *config.js
 */target
 *.vscode
+cypress/testes/node_modules/
